@@ -5,20 +5,23 @@ function App() {
   const [count, setCount] = useState<number>(0);
 
   function LangList() {
-    const languages = [
+    const languages: {
+      title: string;
+      id: number;
+    }[] = [
       { "title": "JavaScript", "id": 1 },
       { "title": "TypeScript", "id": 2 },
-      { "title": "C#", "id": 2 },
-      { "title": "Go", "id": 3 },
-      { "title": "C++", "id": 4 },
-      { "title": "Rust", "id": 5 },
+      { "title": "C#", "id": 3 },
+      { "title": "Go", "id": 4 },
+      { "title": "C++", "id": 5 },
+      { "title": "Rust", "id": 6 },
     ];
     
     return (
       languages.map(language =>
-        <li key={language.id}>
+        <button key={language.id}>
           {language.title}
-        </li>
+        </button>
       )
     );
   }
